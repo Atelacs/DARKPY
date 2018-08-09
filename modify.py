@@ -1,20 +1,12 @@
 import sys
+import fileinput
 
+F1 = 'CDR111000983748505'
 
-import string
-s = open("test.ini","r+")
-for line in s.readlines():
-   print line
-   string.replace(line, 'mickey','minnie')
-   print line
-s.close()
-
-
-#s = open('test.ini').read()
-#s = s.replace('C1Y%', 'test')
-#print(message)
-#s.close()
-
-#f = open('test.ini', 'w')
-#f.write(s)
-#f.close()
+file = open("testfile.txt","w") 
+ 
+file.write('[uwsgi]\n') 
+file.write('env = LD_LIBRARY_PATH=/opt/ecmwf/eccodes/lib\n') 
+file.write('env = ECMWF_WMS_SERVER_DATA_PATH=/data/'+F1+'\n')
+file.write('pidfile = /var/log/uwsgi/wms-server.pid\n')
+file.close()
