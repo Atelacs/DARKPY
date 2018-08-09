@@ -5,9 +5,12 @@ import os
 import shutil
 
 # Test de fichier
+# 
 
 DST = '/Users/darkmutch/DARKPY'
 SRC = '/Users/darkmutch/'
+F0 = 'DATA.dat'
+FI = '/etc'
 
 N = 15
 date_N_days_after = datetime.datetime.now() + datetime.timedelta(days=N)
@@ -35,3 +38,7 @@ else:
 
 print 'Copying File'
 shutil.copy2(os.path.join(SRC,F1),DST)
+shutil.copy2(os.path.join(DST,F1),os.path.join(DST,F0))
+
+file = open("test.ini","r")
+file.close()
